@@ -28,7 +28,7 @@ body{
 	top: 1em;
 	position: absolute;
 	width: 100%;
-	padding: .7em 15em .7em 5em;
+	padding: .7em 14em .7em 7em;
 	justify-content: space-between;
 }
 .menu-item a{
@@ -54,28 +54,31 @@ body{
 	background-size: cover;
 	background-position: center 0;
 	width: 100%;
-	min-height: 50em;
+	min-height: 45em;
 	text-align: center;
 }
 .main-header{
 	font-family: source_sans_proextralight, sans-serif;
-	font-size: 3em;
+	font-size: 4em;
 	font-weight: 400;
 }
 .container{
 	color: #fff;
 	display: inline-block;
 	margin-top: 20em;
-	max-width: 39%;
+	max-width: 45%;
 	font-size: .95em;
 }
 .main-paragraph{
 	margin-top: 1em;
-	color: #ececec;
+	color: #ccc;
+	width: 80%;
+	margin: auto;
+	line-height: 1.7em;
 }
 .btn{
 	color: #fff;
-	padding: .5em 1.3em;
+	padding: .6em 1.3em;
 	background-color: transparent;
 	border: .12em solid #fff;
 	transition-duration: .2s;
@@ -93,4 +96,49 @@ body{
 .main-btn{
 	margin-top: 3.5em;
 	font-size: 1.3em;
+}
+.left-side{
+	vertical-align: top;
+	display: inline-block;
+	width: 50%;
+	min-height: 28em;
+}
+.right-side{
+	display: inline-block;
+	margin-left: -4.5px;
+	width: 50%;
+	min-height: 28em;
+}
+.content-header{
+	font-size: 2.5em;
+	margin-bottom: 1em;
+	font-family: source_sans_proextralight, sans-serif;
+	color: #333;
+}
+.content-container{
+	margin-top: 4em;
+	margin-left: 15%;
+	width: 70%;
+}
+.content-paragraph{
+	line-height: 1.7em;
+	color: #7f848c;
+}
+.content-slider{
+	overflow: hidden;
+	height: 20em;
+	width: 31em;
+	margin-top: 4em;
+	margin-left: 2em;
+	box-shadow: 5px 5px 30px grey;
+}
+.autocycle{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-transition: .4s;
+	-o-transition: .4s;
+	transition: .4s;
 }
