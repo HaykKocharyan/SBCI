@@ -33,7 +33,7 @@ function AutoSlide(){
 	var stepSize = new Array(slideElements.length);
 	for (var i = 0; i < stepSize.length; i++) {
 		stepSize[i] = slideElements[i].getAttribute("data-size");
-		stepSize[i] = parseInt(stepSize[i]);
+		stepSize[i] = parseFloat(stepSize[i]);
 	}
 	var elementSize = new Array(slideElements.length);
 	for (var i = 0; i < elementSize.length; i++) {
@@ -44,7 +44,7 @@ function AutoSlide(){
 	for (var i = 0; i < timers.length; i++) {
 		timers[i] = setInterval((element, size, maxsize) => {
 			var activetransform = element.style.transform;
-			activetransform = parseInt(activetransform.slice(11, activetransform.length-3));
+			activetransform = parseFloat(activetransform.slice(11, activetransform.length-3));
 			console.log((activetransform + size) % maxsize);
 			element.style.transform = 'translateX(' + (activetransform - size) % maxsize + 'em)';
 		}, slideElements[i].getAttribute("data-time"), slideElements[i], stepSize[i], elementSize[i]);
