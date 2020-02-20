@@ -32,6 +32,7 @@ body{
 	justify-content: space-between;
 }
 .menu-item a{
+	font-family: source_sans_proextralight, sans-serif;
 	font-size: 14px;
 	color: #e3e3e3;
 	text-decoration: none;
@@ -321,4 +322,24 @@ body{
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+.footer-links{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 20.7em;
+	margin: auto;
+	margin-top: 2em;
+	justify-content: flex-start;
+}
+.footer-list-separator{
+	padding-left: 1em;
+	padding-right: 1em;
+	color: #fff;
+}
+.footer-links a{
+	text-decoration: none;
+	color: #fff;
 }
