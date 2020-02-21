@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', Start);
 
 function Start(){
 	Parallax();
-	AutoSlide();
+
+	/*AutoSlide();*/
+
+	window.addEventListener('scroll', FadeInOnFocuse);	
 }
 
 
@@ -14,18 +17,17 @@ function Start(){
 
 /* functions for start function */
 function Parallax(){
-	var width = document.body.clientWidth;
-
-	if (width > TabletWidth){	//if we use pc than
+	var width = document.documentElement.clientWidth;
+	let BgElement = document.getElementsByClassName("main-bg")[0];
+	if (width > TabletWidth && BgElement != null){	//if we use pc than
 		window.addEventListener('scroll', function() {	//add parallax function
-  			let BgElement = document.getElementsByClassName("main-bg")[0];
   			BgElement.style.backgroundPosition = 'center ' + pageYOffset*0.7 + 'px';
-
 		});
 	}
 }
 
-function AutoSlide(){
+/* beta version of AutoSlide */
+/*function AutoSlide(){
 	var slideElements = document.getElementsByClassName("autocycle");
 	for (var i = 0; i < slideElements.length; i++) {
 		slideElements[i].style.transform = 'translateX(0)';
@@ -48,5 +50,19 @@ function AutoSlide(){
 			console.log((activetransform + size) % maxsize);
 			element.style.transform = 'translateX(' + (activetransform - size) % maxsize + 'em)';
 		}, slideElements[i].getAttribute("data-time"), slideElements[i], stepSize[i], elementSize[i]);
+	}
+}*/
+
+function FadeInOnFocuse(){
+	var Elements = document.getElementsByClassName('fade-in-up-focuse');
+	if (Elements.length === 0)
+		window.removeEventListener('scroll', FadeInOnFocuse);
+	for (var i = 0; i < Elements.length; i++) {
+		var elementY = Elements[i].getBoundingClientRect().top;
+
+		if (elementY <= 500){
+			Elements[i].classList.add('fade-in-up');
+			Elements[i].classList.remove('fade-in-up-focuse');
+		}
 	}
 }

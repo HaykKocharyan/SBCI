@@ -156,7 +156,7 @@ body{
 .content-link:hover::after{
 	transform: scaleX(1);
 }
-.contnet-image{
+.content-image{
 	margin-left: 20%;
 	margin-top: 4em;
 	width: 70%;
@@ -303,7 +303,7 @@ body{
 	font-family: source_sans_proextralight, sans-serif;
 	color: #fff;
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 1.4em;
 }
 .footer-icons{
 	width: 2.5em;
@@ -324,15 +324,16 @@ body{
 	justify-content: space-between;
 }
 .footer-links{
+	font-size: .8em;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	width: 20.7em;
+	width: 17%;
 	margin: auto;
-	margin-top: 2em;
-	justify-content: flex-start;
+	margin-top: 1.5em;
+	justify-content: center;
 }
 .footer-list-separator{
 	padding-left: 1em;
@@ -342,4 +343,89 @@ body{
 .footer-links a{
 	text-decoration: none;
 	color: #fff;
+}
+.blue-header{
+	min-height: 7em;
+	background-color: #0075cc;
+}
+.main-content{
+	padding-top: 7em;
+	min-height: 30em;
+	text-align: center;
+	color: #0075cc;
+}
+.book-item-image{
+	width: 100%;
+}
+.book-section{
+	width: 70%;
+	margin: auto;
+}
+.book-item{
+	padding: 5em 2em;
+}
+.site-heading{
+	font-family: source_sans_proextralight, sans-serif;
+	font-size: 3em;
+	margin-bottom: 0em;
+}
+.book-item-heading{
+	font-family: source_sans_proextralight, sans-serif;
+	font-size: 1.4em;
+	margin-bottom: 1em;
+}
+.book-item-text{
+	margin-top: .5em;
+	text-align: left;
+	width: 95%;
+	padding-left: 1%;
+}
+.fade-in-up{
+	-webkit-animation: fade-in .7s ease-in-out,
+				f-down-t-inital .7s ease-in-out;
+	-o-animation: fade-in .7s ease-in-out,
+				f-down-t-inital .7s ease-in-out;
+	animation: fade-in .7s ease-in-out,
+				f-down-t-inital .7s ease-in-out;
+}
+.fade-in-up-focuse{
+	opacity: 0;
+}
+
+
+
+
+
+@-webkit-keyframes f-down-t-inital {
+	from { transform: translateY(1.5em); }
+	to { transform: translateY(0); }
+}
+@-o-keyframes f-down-t-inital {
+	from { transform: translateY(1.5em); }
+	to { transform: translateY(0); }
+}
+@-moz-keyframes f-down-t-inital {
+	from { transform: translateY(1.5em); }
+	to { transform: translateY(0); }
+}
+@keyframes f-down-t-inital {
+	from { transform: translateY(1.5em); }
+	to { transform: translateY(0); }
+}
+
+@-webkit-keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-o-keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
