@@ -54,15 +54,16 @@ function Parallax(){
 }*/
 
 function FadeInOnFocuse(){
-	var Elements = document.getElementsByClassName('fade-in-up-focuse');
-	if (Elements.length === 0)
+	var elements = document.getElementsByClassName('fade-in-up-focuse');
+	var twoThirdScreenSize = document.documentElement.clientHeight * 0.7;
+	if (elements.length === 0)
 		window.removeEventListener('scroll', FadeInOnFocuse);
-	for (var i = 0; i < Elements.length; i++) {
-		var elementY = Elements[i].getBoundingClientRect().top;
+	for (var i = 0; i < elements.length; i++) {
+		var elementY = elements[i].getBoundingClientRect().top;
 
-		if (elementY <= 500){
-			Elements[i].classList.add('fade-in-up');
-			Elements[i].classList.remove('fade-in-up-focuse');
+		if (elementY <= twoThirdScreenSize){
+			elements[i].classList.add('fade-in-up');
+			elements[i].classList.remove('fade-in-up-focuse');
 		}
 	}
 }
