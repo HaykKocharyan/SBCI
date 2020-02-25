@@ -5,23 +5,25 @@ var DesktopWidth = 1599;
 document.addEventListener('DOMContentLoaded', Start);
 
 function Start(){
-	Parallax();
+	MainParallax();
 
 	/*AutoSlide();*/
 
-	window.addEventListener('scroll', FadeInOnFocuse);	
+	window.addEventListener('scroll', FadeInOnFocuse);
+	inputs = document.getElementsByClassName('contact-input');
 }
 
 
 
 
 /* functions for start function */
-function Parallax(){
+function MainParallax(){
 	var width = document.documentElement.clientWidth;
-	let BgElement = document.getElementsByClassName("main-bg")[0];
-	if (width > TabletWidth && BgElement != null){	//if we use pc than
+	var bgElement = document.getElementsByClassName("main-bg")[0];
+	if (width > TabletWidth && bgElement != null){	//if we use pc than
+		var coef = parseFloat(bgElement.getAttribute('parallax-speed')) || 0.7;
 		window.addEventListener('scroll', function() {	//add parallax function
-  			BgElement.style.backgroundPosition = 'center ' + pageYOffset*0.7 + 'px';
+  			bgElement.style.backgroundPosition = 'center ' + pageYOffset * coef + 'px';
 		});
 	}
 }
@@ -66,4 +68,35 @@ function FadeInOnFocuse(){
 			elements[i].classList.remove('fade-in-up-focuse');
 		}
 	}
+}
+
+var inputs;
+function Valitadion(button = false){
+	for (var i = 0; i < inputs.length; i++) {
+		var element = inputs[i];
+		var value = element.value;
+		if (value != '' || button){
+			if (element.name === 'FirstName' || element.name === 'LastName'){
+				if (value.length < 3 || value.match(/(\d+)/) != undefined){
+					ValidationFailed(element);
+				}
+			}else if (element.name === 'Email'){
+				if (!emailIsValid(value))
+					ValidationFailed(element);
+			}else if (element.name === 'PhoneNumber'){
+				if (isNaN(Number(value)))
+					ValidationFailed(element);
+			}
+		}
+	}
+
+}
+function ValidationFailed(element){
+	console.log('failed ' + element.name);
+}
+
+
+
+function emailIsValid (email) {
+  return /\S+@\S+\.\S+/.test(email)
 }

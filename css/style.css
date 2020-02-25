@@ -645,6 +645,125 @@ body{
 	color: #0075cc;
 	margin-bottom: 1.2em;
 }
+.news-content{
+	margin-bottom: 7em;
+}
+.contact-main-bg{
+	background-image: url(../img/Contact//Sevan_lake.jpg);
+}
+.contact-content{
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+.contact-map{
+	border: 1px solid #888;
+	width: 602px;
+	height: 452px;
+	position: relative;
+}
+.required-field-abbr{
+	color: #990000;
+	text-decoration: none;
+}
+.contact-form{
+	margin-left: 3em;
+}
+.contact-item{
+	height: 4em;
+	width: 50%;
+	margin-bottom: 1em;
+}
+.contact-label{
+	font-size: 1.1em;
+	color: #0075cc;
+	width: 100%;
+}
+.contact-label abbr{
+	font-size: 1.2em;
+}
+.contact-label abbr:hover{
+	cursor: help;
+}
+.contact-input{
+	color: #0075cc;
+	margin-top: .4em;
+	font-size: 1em;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #0075cc;
+	padding: .2em;
+	width: 85%;
+	-webkit-transition-duration: .3s;
+	-o-transition-duration: .3s;
+	transition-duration: .3s;
+}
+.contact-input:focus{
+	padding-bottom: .4em;
+	border-bottom-width: 2px;
+}
+.contact-checkbox-box{
+	width: 33%;
+	margin-top: 1em;
+}
+.contact-checkbox-item{
+	padding-top: 1em;
+	width: 100%;
+	margin-bottom: 2em;
+}
+.contact-checkbox-label:hover{
+	cursor: pointer;
+}
+.contact-checkbox-label::selection{
+	background-color: #fff;
+}
+.contact-checkbox:checked~.contact-checkbox-label{
+	font-weight: bold;
+}
+.contact-textarea{
+	font-size: 1em;
+	margin-top: 1em;
+	resize: none;
+	width: 100%;
+	outline: none;
+	padding: .2em;
+	color: #0075cc;
+	border: none;
+	border-left: 1px solid #0075cc;
+	border-bottom: 1px solid #0075cc;
+}
+.contact-textarea:focus{
+	border: 1px solid #0075cc;
+}
+.contact-textarea-item{
+	width: 93%;
+}
+.contact-button-box{
+	width: 93%;
+	text-align: center;
+}
+.contact-send-button{
+	color: #0075cc;
+	margin-top: 1em;
+	width: 25%;
+	height: 2.5em;
+	font-size: 1em;
+	border: 1px solid #0075cc;
+	background-color: #fff;
+	outline: none;
+	-webkit-transition-duration: .2s;
+	-o-transition-duration: .2s;
+	transition-duration: .2s;
+}
+.contact-send-button:hover{
+	color: #fff;
+	background-color: #0075cc;
+	cursor: pointer;
+}
+.contact-send-button:active{
+	color: #fff;
+	background-color: #00459c;
+	cursor: pointer;
+}
 
 
 
