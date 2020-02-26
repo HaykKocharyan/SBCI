@@ -3,6 +3,7 @@ var MobileWidth = 767;
 var TabletWidth = 959;
 var DesktopWidth = 1599;
 document.addEventListener('DOMContentLoaded', Start);
+var validationInterval;
 
 function Start(){
 	MainParallax();
@@ -11,6 +12,9 @@ function Start(){
 
 	window.addEventListener('scroll', FadeInOnFocuse);
 	inputs = document.getElementsByClassName('contact-input');
+	button = document.getElementsByClassName('contact-send-button')[0];
+	if (document.getElementsByTagName('form').length != 0)
+		validationInterval = setInterval(Validation, 100, true);
 }
 
 
@@ -70,29 +74,45 @@ function FadeInOnFocuse(){
 	}
 }
 
+var button ;
+var errors = new Array();
 var inputs;
-function Valitadion(button = false){
+function Validation(){
 	for (var i = 0; i < inputs.length; i++) {
 		var element = inputs[i];
 		var value = element.value;
-		if (value != '' || button){
-			if (element.name === 'FirstName' || element.name === 'LastName'){
-				if (value.length < 3 || value.match(/(\d+)/) != undefined){
-					ValidationFailed(element);
-				}
-			}else if (element.name === 'Email'){
-				if (!emailIsValid(value))
-					ValidationFailed(element);
-			}else if (element.name === 'PhoneNumber'){
-				if (isNaN(Number(value)))
-					ValidationFailed(element);
-			}
+		var indexInErrors = errors.indexOf(element);
+
+		if (element.name === 'FirstName' || element.name === 'LastName'){
+			if (value.length < 3 || value.match(/(\d+)/) != undefined){
+				ValidationFailed(element);
+			}else if (indexInErrors != -1)
+				errors.splice(indexInErrors, 1);
+
+		}else if (element.name === 'Email'){
+			if (!emailIsValid(value))
+				ValidationFailed(element);
+			else if (indexInErrors != -1)
+				errors.splice(indexInErrors, 1);
+
+		}else if (element.name === 'PhoneNumber'){
+			if (value == '' || value.length < 9 || isNaN(Number(value)))
+				ValidationFailed(element);
+			else if (indexInErrors != -1)
+				errors.splice(indexInErrors, 1);
 		}
 	}
-
+	if(errors.length != 0){
+		button.disabled = true;
+	}
+	else{
+		button.disabled = false;
+	}
 }
+
 function ValidationFailed(element){
-	console.log('failed ' + element.name);
+	if(errors.indexOf(element) == -1)
+		errors.push(element);
 }
 
 
