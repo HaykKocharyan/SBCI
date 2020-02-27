@@ -672,6 +672,7 @@ body{
 	height: 4em;
 	width: 50%;
 	margin-bottom: 1em;
+	position: relative;
 }
 .contact-label{
 	font-size: 1.1em;
@@ -767,12 +768,59 @@ body{
 .contact-send-button:disabled{
 	color: #222;
 	background-color: #fff;
-	border-color: #555;
+	border: none;
 	cursor: default;
 	background-image: url(../img/Contact/disabled-button.png);
 	-webkit-background-size: cover;
 	background-size: cover;
 }
+.contact-verification-failed{
+	background-color: #ea423d;
+	padding: .2em .6em;
+	border-radius: 50%;
+	color: #fff;
+	position: absolute;
+	right: 3em;
+	bottom: .6em;
+}
+.contact-verification-failed:hover{
+	cursor: help;
+}
+.contact-verification-failed:hover p{
+	display: block;
+}
+.contact-verification-failed p{
+	-webkit-transition-duration: .2s;
+	-o-transition-duration: .2s;
+	transition-duration: .2s;
+	font-size: .7em;
+	display: none;
+	position: absolute;
+	color: #ea423d;
+	border: 1px solid #ea423d;
+	background-color: #fff;
+	text-align: center;
+	width: 450%;
+	z-index: 9;
+	padding: 1em 0em;
+	top: -.2em;
+	right: -470%;
+}
+.contact-verification-failed p::before{
+	z-index: 2;
+	left: -.6em;
+	top: 50%;
+	transform: translateY(-75%);
+	position: absolute;
+	content: '';
+	border-right: .6em solid #ea423d;
+	border-top: .6em solid transparent;
+	border-bottom: .6em solid transparent;
+}
+
+
+
+
 
 
 

@@ -74,6 +74,8 @@ function FadeInOnFocuse(){
 	}
 }
 
+
+
 var button ;
 var errors = new Array();
 var inputs;
@@ -87,19 +89,19 @@ function Validation(){
 			if (value.length < 3 || value.match(/(\d+)/) != undefined){
 				ValidationFailed(element);
 			}else if (indexInErrors != -1)
-				errors.splice(indexInErrors, 1);
+				ValidationPassed(element, indexInErrors);
 
 		}else if (element.name === 'Email'){
 			if (!emailIsValid(value))
 				ValidationFailed(element);
 			else if (indexInErrors != -1)
-				errors.splice(indexInErrors, 1);
+				ValidationPassed(element, indexInErrors);
 
 		}else if (element.name === 'PhoneNumber'){
 			if (value == '' || value.length < 9 || isNaN(Number(value)))
 				ValidationFailed(element);
 			else if (indexInErrors != -1)
-				errors.splice(indexInErrors, 1);
+				ValidationPassed(element, indexInErrors);
 		}
 	}
 	if(errors.length != 0){
@@ -109,10 +111,34 @@ function Validation(){
 		button.disabled = false;
 	}
 }
-
+function ValidationPassed(element, index){
+	if(index != -1){
+		var elem = element.parentNode.getElementsByClassName('contact-verification-failed')[0];
+		element.parentNode.removeChild(elem);
+		errors.splice(index, 1);
+	}
+}
 function ValidationFailed(element){
-	if(errors.indexOf(element) == -1)
+	if(errors.indexOf(element) == -1){
+		var errorElement = document.createElement('h3');
+		errorElement.classList += 'contact-verification-failed';
+		errorElement.innerHTML = '!<p>Fill This Field</p>';
+		errorElement = element.parentNode.insertBefore(errorElement, element);
+		console.log(errorElement);
+		errorElement.addEventListener('mouseover', AdditionalTextShow);
 		errors.push(element);
+	}
+}
+function AdditionalTextShow(element){
+	element = element.target.lastChild;
+	console.log(element);
+	element.classList.add('fade-in-up');
+}
+function AdditionalTextHide(element){
+	element = element.target.lastChild;
+	console.log(element);
+	element.classList.remove('fade-in-up');
+	element.style.opacity = '0'
 }
 
 
