@@ -28,7 +28,7 @@ body{
 	top: 1em;
 	position: absolute;
 	width: 100%;
-	padding: .7em 14em .7em 7em;
+	padding: .7em 10em .7em 10em;
 	justify-content: space-between;
 }
 .menu-item a{
@@ -295,15 +295,15 @@ body{
 	font-weight: 600;
 }
 .footer{
-	padding-top: 1.5em;
+	padding-top: 1em;
 	background-color: #0075cc;
-	height: 13em;
+	height: 10.5em;
 }
 .footer-header{
 	font-family: source_sans_proextralight, sans-serif;
 	color: #fff;
 	text-align: center;
-	margin-bottom: 1.4em;
+	margin-bottom: 1em;
 }
 .footer-icons{
 	width: 2.5em;
@@ -349,7 +349,7 @@ body{
 	background-color: #0075cc;
 }
 .main-content{
-	padding-top: 7em;
+	padding-top: 5em;
 	min-height: 30em;
 	text-align: center;
 	color: #0075cc;
@@ -368,12 +368,14 @@ body{
 .site-heading{
 	font-family: source_sans_proextralight, sans-serif;
 	font-size: 3em;
-	margin-bottom: 0em;
+	margin-bottom: 0;
 }
 .book-item-heading{
+	color: #444;
 	font-family: source_sans_proextralight, sans-serif;
 	font-size: 1.5em;
 	margin-bottom: 1em;
+	font-weight: 400;
 }
 .book-item-text{
 	line-height: 1.9em;
@@ -382,6 +384,7 @@ body{
 	text-align: left;
 	width: 95%;
 	padding-left: 1%;
+	color: #777;
 }
 .fade-in-up{
 	-webkit-animation: fade-in .7s ease-in-out,
@@ -422,8 +425,8 @@ body{
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
 	text-align: left;
-	padding-top: 7em;
 	color: #0075cc;
+	margin-top: 4em;
 	position: relative;
 	padding-bottom: 4em;
 }
@@ -721,18 +724,14 @@ body{
 	font-weight: bold;
 }
 .contact-textarea{
-	font-size: 1em;
+	font-family: sans-serif;
+	font-size: .9em;
 	margin-top: 1em;
 	resize: none;
 	width: 100%;
 	outline: none;
-	padding: .2em;
+	padding: .3em;
 	color: #0075cc;
-	border: none;
-	border-left: 1px solid #0075cc;
-	border-bottom: 1px solid #0075cc;
-}
-.contact-textarea:focus{
 	border: 1px solid #0075cc;
 }
 .contact-textarea-item{
@@ -766,17 +765,19 @@ body{
 	cursor: pointer;
 }
 .contact-send-button:disabled{
-	color: #222;
-	background-color: #fff;
-	border: none;
-	cursor: default;
-	background-image: url(../img/Contact/disabled-button.png);
-	-webkit-background-size: cover;
-	background-size: cover;
+	color: #fff;
+	background-color: #ff6600;
+	border-color: #eb5200;
+	border-width: 2px;
+	cursor: not-allowed;
 }
 .contact-verification-failed{
-	background-color: #ea423d;
-	padding: .2em .6em;
+	background-color: #eb5200;
+	width: 1.7em;
+	height: 1.7em;
+	text-align: center;
+	padding-left: -.1em;
+	padding-top: .25em;
 	border-radius: 50%;
 	color: #fff;
 	position: absolute;
@@ -796,8 +797,9 @@ body{
 	font-size: .7em;
 	display: none;
 	position: absolute;
-	color: #ea423d;
-	border: 1px solid #ea423d;
+	color: #eb5200;
+	border: 1px solid #eb5200;
+	border-radius: 2px;
 	background-color: #fff;
 	text-align: center;
 	width: 450%;
@@ -813,10 +815,93 @@ body{
 	transform: translateY(-75%);
 	position: absolute;
 	content: '';
-	border-right: .6em solid #ea423d;
+	border-right: .6em solid #eb5200;
 	border-top: .6em solid transparent;
 	border-bottom: .6em solid transparent;
 }
+.tac-text{
+	width: 65%;
+	padding-top: 5em;
+	padding-bottom: 4em;
+	margin: 0 auto;
+	color: #444;
+}
+.tac-text h2{
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+.tac-text p{
+	margin-top: 1em;
+	margin-bottom: 2em;
+	line-height: 1.4em;
+}
+.tac-text ol, .tac-text li{
+	margin-left: 2em;
+	line-height: 1.4em;
+}
+.news-bg{
+	padding-top: 20em;
+	background-image: url(../img/NewsAndEvents/mainImage.jpg);
+}
+.news-information, .about-information{
+	margin: 0 auto;
+	width: 78%;
+	padding: 1em;	
+	color: #fff;
+	font-size: 1.7em;
+	font-family: source_sans_proextralight, sans-serif;
+}
+.about-bg{
+	background-image: url(../img/About/main.png);
+	padding-top: 18em;
+}
+.about-main-content{
+	padding: 5em;
+	padding-top: 7em;
+}
+.paragraph{
+	color: #333;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	padding-left: 1.3em;
+	padding-top: 1em;
+	font-family: sans-serif;
+}
+.paragraph-image{
+	width: 85%;
+	height: 23em;
+	border-radius: .7em;
+	margin: 0 3em;
+	-webkit-box-shadow: .2em .2em 1em rgba(0,0,0,0.4);
+	box-shadow: .2em .2em 1em rgba(0,0,0,0.4);
+}
+.paragraph-header{
+	margin-top: 1em;
+	padding-left: .7em;
+	color: #555;
+	font-family: source_sans_proextralight, sans-serif;
+}
+.paragraph-box{
+	margin-bottom: 7em;
+}
+.about-information{
+	font-size: 2.5em;
+	font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
